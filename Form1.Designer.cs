@@ -94,6 +94,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.fieldUseTracesToolcheckBox = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
             this.fieldToolNumberTextBox = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -107,7 +108,7 @@
             this.fieldHFeedRateTextBox = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.fieldSpindleSpeedTextBox = new System.Windows.Forms.TextBox();
-            this.fieldUseTracesToolcheckBox = new System.Windows.Forms.CheckBox();
+            this.checkBoxComments = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -120,9 +121,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(11, 10);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 46);
+            this.button1.Size = new System.Drawing.Size(176, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "Open PCB File";
             this.button1.UseVisualStyleBackColor = true;
@@ -131,27 +133,29 @@
             // richTextBox1
             // 
             this.richTextBox1.HideSelection = false;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 1109);
+            this.richTextBox1.Location = new System.Drawing.Point(11, 887);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(640, 224);
+            this.richTextBox1.Size = new System.Drawing.Size(569, 180);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1673, 1005);
+            this.pictureBox1.Size = new System.Drawing.Size(1487, 804);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(428, 75);
+            this.label1.Location = new System.Drawing.Point(380, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.Size = new System.Drawing.Size(42, 16);
             this.label1.TabIndex = 13;
             this.label1.Text = "Zoom";
             // 
@@ -159,9 +163,10 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(668, 12);
+            this.panel1.Location = new System.Drawing.Point(594, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1761, 1200);
+            this.panel1.Size = new System.Drawing.Size(1565, 960);
             this.panel1.TabIndex = 20;
             // 
             // comboBox1
@@ -177,16 +182,18 @@
             "PROCEED HOLES",
             "PROCEED FIELDS",
             "GENERATE G-CODE"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 82);
+            this.comboBox1.Location = new System.Drawing.Point(11, 66);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 28);
+            this.comboBox1.Size = new System.Drawing.Size(134, 24);
             this.comboBox1.TabIndex = 24;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(168, 72);
+            this.button2.Location = new System.Drawing.Point(149, 58);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 46);
+            this.button2.Size = new System.Drawing.Size(133, 37);
             this.button2.TabIndex = 25;
             this.button2.Text = "RUN";
             this.button2.UseVisualStyleBackColor = true;
@@ -194,15 +201,18 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxComments);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.m3DwelTextBox);
             this.groupBox1.Controls.Add(this.safeLevelTextBox);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.clearLevelTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 132);
+            this.groupBox1.Location = new System.Drawing.Point(11, 106);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(640, 119);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(569, 95);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "General";
@@ -210,26 +220,28 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(318, 52);
+            this.label19.Location = new System.Drawing.Point(283, 42);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(70, 20);
+            this.label19.Size = new System.Drawing.Size(58, 16);
             this.label19.TabIndex = 33;
             this.label19.Text = "M3 Dwel";
             // 
             // m3DwelTextBox
             // 
-            this.m3DwelTextBox.Location = new System.Drawing.Point(440, 49);
+            this.m3DwelTextBox.Location = new System.Drawing.Point(391, 39);
+            this.m3DwelTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m3DwelTextBox.Name = "m3DwelTextBox";
-            this.m3DwelTextBox.Size = new System.Drawing.Size(100, 26);
+            this.m3DwelTextBox.Size = new System.Drawing.Size(89, 22);
             this.m3DwelTextBox.TabIndex = 32;
             this.m3DwelTextBox.Text = "20";
             this.m3DwelTextBox.TextChanged += new System.EventHandler(this.m3DwelTextBox_TextChanged);
             // 
             // safeLevelTextBox
             // 
-            this.safeLevelTextBox.Location = new System.Drawing.Point(136, 78);
+            this.safeLevelTextBox.Location = new System.Drawing.Point(121, 62);
+            this.safeLevelTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.safeLevelTextBox.Name = "safeLevelTextBox";
-            this.safeLevelTextBox.Size = new System.Drawing.Size(100, 26);
+            this.safeLevelTextBox.Size = new System.Drawing.Size(89, 22);
             this.safeLevelTextBox.TabIndex = 31;
             this.safeLevelTextBox.Text = "1";
             this.safeLevelTextBox.TextChanged += new System.EventHandler(this.safeLevelTextBox_TextChanged);
@@ -237,26 +249,27 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 52);
+            this.label12.Location = new System.Drawing.Point(12, 42);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 20);
+            this.label12.Size = new System.Drawing.Size(71, 16);
             this.label12.TabIndex = 29;
             this.label12.Text = "Clear level";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 81);
+            this.label7.Location = new System.Drawing.Point(12, 65);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 20);
+            this.label7.Size = new System.Drawing.Size(67, 16);
             this.label7.TabIndex = 30;
             this.label7.Text = "Safe level";
             // 
             // clearLevelTextBox
             // 
-            this.clearLevelTextBox.Location = new System.Drawing.Point(136, 49);
+            this.clearLevelTextBox.Location = new System.Drawing.Point(121, 39);
+            this.clearLevelTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clearLevelTextBox.Name = "clearLevelTextBox";
-            this.clearLevelTextBox.Size = new System.Drawing.Size(100, 26);
+            this.clearLevelTextBox.Size = new System.Drawing.Size(89, 22);
             this.clearLevelTextBox.TabIndex = 28;
             this.clearLevelTextBox.Text = "20";
             this.clearLevelTextBox.TextChanged += new System.EventHandler(this.clearLevelTextBox_TextChanged);
@@ -276,9 +289,11 @@
             this.groupBox2.Controls.Add(this.tracesHFeedRateTextBox);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.tracesSpindleSpeedTextBox);
-            this.groupBox2.Location = new System.Drawing.Point(12, 257);
+            this.groupBox2.Location = new System.Drawing.Point(11, 206);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(640, 168);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(569, 134);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Traces milling";
@@ -286,17 +301,18 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(14, 68);
+            this.label17.Location = new System.Drawing.Point(12, 54);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(97, 20);
+            this.label17.Size = new System.Drawing.Size(83, 16);
             this.label17.TabIndex = 38;
             this.label17.Text = "Tool number";
             // 
             // tracesToolNumberTextBox
             // 
-            this.tracesToolNumberTextBox.Location = new System.Drawing.Point(136, 65);
+            this.tracesToolNumberTextBox.Location = new System.Drawing.Point(121, 52);
+            this.tracesToolNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tracesToolNumberTextBox.Name = "tracesToolNumberTextBox";
-            this.tracesToolNumberTextBox.Size = new System.Drawing.Size(100, 26);
+            this.tracesToolNumberTextBox.Size = new System.Drawing.Size(89, 22);
             this.tracesToolNumberTextBox.TabIndex = 35;
             this.tracesToolNumberTextBox.Text = "1";
             this.tracesToolNumberTextBox.TextChanged += new System.EventHandler(this.tracesToolNumberTextBox_TextChanged);
@@ -304,17 +320,18 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(320, 68);
+            this.label15.Location = new System.Drawing.Point(284, 54);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(66, 20);
+            this.label15.Size = new System.Drawing.Size(59, 16);
             this.label15.TabIndex = 34;
             this.label15.Text = "Mill level";
             // 
             // tracesMillLevelTextBox
             // 
-            this.tracesMillLevelTextBox.Location = new System.Drawing.Point(440, 65);
+            this.tracesMillLevelTextBox.Location = new System.Drawing.Point(391, 52);
+            this.tracesMillLevelTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tracesMillLevelTextBox.Name = "tracesMillLevelTextBox";
-            this.tracesMillLevelTextBox.Size = new System.Drawing.Size(100, 26);
+            this.tracesMillLevelTextBox.Size = new System.Drawing.Size(89, 22);
             this.tracesMillLevelTextBox.TabIndex = 34;
             this.tracesMillLevelTextBox.Text = "-0,05";
             this.tracesMillLevelTextBox.TextChanged += new System.EventHandler(this.tracesMillLevelTextBox_TextChanged);
@@ -324,9 +341,10 @@
             this.millTracesCheckBox.AutoSize = true;
             this.millTracesCheckBox.Checked = true;
             this.millTracesCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.millTracesCheckBox.Location = new System.Drawing.Point(6, 25);
+            this.millTracesCheckBox.Location = new System.Drawing.Point(5, 20);
+            this.millTracesCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.millTracesCheckBox.Name = "millTracesCheckBox";
-            this.millTracesCheckBox.Size = new System.Drawing.Size(105, 24);
+            this.millTracesCheckBox.Size = new System.Drawing.Size(89, 20);
             this.millTracesCheckBox.TabIndex = 17;
             this.millTracesCheckBox.Text = "Mill traces";
             this.millTracesCheckBox.UseVisualStyleBackColor = true;
@@ -334,9 +352,10 @@
             // 
             // tracesVFeedRateTextBox
             // 
-            this.tracesVFeedRateTextBox.Location = new System.Drawing.Point(440, 126);
+            this.tracesVFeedRateTextBox.Location = new System.Drawing.Point(391, 101);
+            this.tracesVFeedRateTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tracesVFeedRateTextBox.Name = "tracesVFeedRateTextBox";
-            this.tracesVFeedRateTextBox.Size = new System.Drawing.Size(100, 26);
+            this.tracesVFeedRateTextBox.Size = new System.Drawing.Size(89, 22);
             this.tracesVFeedRateTextBox.TabIndex = 27;
             this.tracesVFeedRateTextBox.Text = "800";
             this.tracesVFeedRateTextBox.TextChanged += new System.EventHandler(this.tracesVFeedRateTextBox_TextChanged);
@@ -344,17 +363,18 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(318, 129);
+            this.label8.Location = new System.Drawing.Point(283, 103);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 20);
+            this.label8.Size = new System.Drawing.Size(80, 16);
             this.label8.TabIndex = 26;
             this.label8.Text = "V FeedRate";
             // 
             // tracesDiameterTextBox
             // 
-            this.tracesDiameterTextBox.Location = new System.Drawing.Point(136, 97);
+            this.tracesDiameterTextBox.Location = new System.Drawing.Point(121, 78);
+            this.tracesDiameterTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tracesDiameterTextBox.Name = "tracesDiameterTextBox";
-            this.tracesDiameterTextBox.Size = new System.Drawing.Size(100, 26);
+            this.tracesDiameterTextBox.Size = new System.Drawing.Size(89, 22);
             this.tracesDiameterTextBox.TabIndex = 20;
             this.tracesDiameterTextBox.Text = "0,2";
             this.tracesDiameterTextBox.TextChanged += new System.EventHandler(this.tracesDiameterTextBox_TextChanged);
@@ -362,26 +382,27 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(318, 100);
+            this.label9.Location = new System.Drawing.Point(283, 80);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 20);
+            this.label9.Size = new System.Drawing.Size(81, 16);
             this.label9.TabIndex = 25;
             this.label9.Text = "H FeedRate";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 100);
+            this.label11.Location = new System.Drawing.Point(12, 80);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 20);
+            this.label11.Size = new System.Drawing.Size(62, 16);
             this.label11.TabIndex = 21;
             this.label11.Text = "Diameter";
             // 
             // tracesHFeedRateTextBox
             // 
-            this.tracesHFeedRateTextBox.Location = new System.Drawing.Point(440, 97);
+            this.tracesHFeedRateTextBox.Location = new System.Drawing.Point(391, 78);
+            this.tracesHFeedRateTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tracesHFeedRateTextBox.Name = "tracesHFeedRateTextBox";
-            this.tracesHFeedRateTextBox.Size = new System.Drawing.Size(100, 26);
+            this.tracesHFeedRateTextBox.Size = new System.Drawing.Size(89, 22);
             this.tracesHFeedRateTextBox.TabIndex = 24;
             this.tracesHFeedRateTextBox.Text = "800";
             this.tracesHFeedRateTextBox.TextChanged += new System.EventHandler(this.tracesHFeedRateTextBox_TextChanged);
@@ -389,17 +410,18 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 132);
+            this.label10.Location = new System.Drawing.Point(12, 106);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(110, 20);
+            this.label10.Size = new System.Drawing.Size(95, 16);
             this.label10.TabIndex = 22;
             this.label10.Text = "Spindle speed";
             // 
             // tracesSpindleSpeedTextBox
             // 
-            this.tracesSpindleSpeedTextBox.Location = new System.Drawing.Point(136, 126);
+            this.tracesSpindleSpeedTextBox.Location = new System.Drawing.Point(121, 101);
+            this.tracesSpindleSpeedTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tracesSpindleSpeedTextBox.Name = "tracesSpindleSpeedTextBox";
-            this.tracesSpindleSpeedTextBox.Size = new System.Drawing.Size(100, 26);
+            this.tracesSpindleSpeedTextBox.Size = new System.Drawing.Size(89, 22);
             this.tracesSpindleSpeedTextBox.TabIndex = 23;
             this.tracesSpindleSpeedTextBox.Text = "18000";
             this.tracesSpindleSpeedTextBox.TextChanged += new System.EventHandler(this.tracesSpindleSpeedTextBox_TextChanged);
@@ -423,9 +445,11 @@
             this.groupBox3.Controls.Add(this.boardDrillsCheckBox);
             this.groupBox3.Controls.Add(this.boardHolesCheckBox);
             this.groupBox3.Controls.Add(this.boardBorderCheckBox);
-            this.groupBox3.Location = new System.Drawing.Point(12, 605);
+            this.groupBox3.Location = new System.Drawing.Point(11, 484);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(640, 212);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(569, 170);
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Board milling";
@@ -433,17 +457,18 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(14, 104);
+            this.label16.Location = new System.Drawing.Point(12, 83);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(97, 20);
+            this.label16.Size = new System.Drawing.Size(83, 16);
             this.label16.TabIndex = 37;
             this.label16.Text = "Tool number";
             // 
             // boardToolNumberTextBox
             // 
-            this.boardToolNumberTextBox.Location = new System.Drawing.Point(136, 101);
+            this.boardToolNumberTextBox.Location = new System.Drawing.Point(121, 81);
+            this.boardToolNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boardToolNumberTextBox.Name = "boardToolNumberTextBox";
-            this.boardToolNumberTextBox.Size = new System.Drawing.Size(100, 26);
+            this.boardToolNumberTextBox.Size = new System.Drawing.Size(89, 22);
             this.boardToolNumberTextBox.TabIndex = 36;
             this.boardToolNumberTextBox.Text = "2";
             this.boardToolNumberTextBox.TextChanged += new System.EventHandler(this.boardToolNumberTextBox_TextChanged);
@@ -451,17 +476,18 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(318, 75);
+            this.label14.Location = new System.Drawing.Point(283, 60);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 20);
+            this.label14.Size = new System.Drawing.Size(59, 16);
             this.label14.TabIndex = 33;
             this.label14.Text = "Mill level";
             // 
             // boardVStepTextBox
             // 
-            this.boardVStepTextBox.Location = new System.Drawing.Point(434, 165);
+            this.boardVStepTextBox.Location = new System.Drawing.Point(386, 132);
+            this.boardVStepTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boardVStepTextBox.Name = "boardVStepTextBox";
-            this.boardVStepTextBox.Size = new System.Drawing.Size(100, 26);
+            this.boardVStepTextBox.Size = new System.Drawing.Size(89, 22);
             this.boardVStepTextBox.TabIndex = 33;
             this.boardVStepTextBox.Text = "1.5";
             this.boardVStepTextBox.TextChanged += new System.EventHandler(this.boardVStepTextBox_TextChanged);
@@ -469,26 +495,28 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(320, 168);
+            this.label6.Location = new System.Drawing.Point(284, 134);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 20);
+            this.label6.Size = new System.Drawing.Size(47, 16);
             this.label6.TabIndex = 16;
             this.label6.Text = "V Step";
             // 
             // boardVFeedRateTextBox
             // 
-            this.boardVFeedRateTextBox.Location = new System.Drawing.Point(434, 133);
+            this.boardVFeedRateTextBox.Location = new System.Drawing.Point(386, 106);
+            this.boardVFeedRateTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boardVFeedRateTextBox.Name = "boardVFeedRateTextBox";
-            this.boardVFeedRateTextBox.Size = new System.Drawing.Size(100, 26);
+            this.boardVFeedRateTextBox.Size = new System.Drawing.Size(89, 22);
             this.boardVFeedRateTextBox.TabIndex = 15;
             this.boardVFeedRateTextBox.Text = "600";
             this.boardVFeedRateTextBox.TextChanged += new System.EventHandler(this.boardVFeedRateTextBox_TextChanged);
             // 
             // boardHFeedRateTextBox
             // 
-            this.boardHFeedRateTextBox.Location = new System.Drawing.Point(434, 101);
+            this.boardHFeedRateTextBox.Location = new System.Drawing.Point(386, 81);
+            this.boardHFeedRateTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boardHFeedRateTextBox.Name = "boardHFeedRateTextBox";
-            this.boardHFeedRateTextBox.Size = new System.Drawing.Size(100, 26);
+            this.boardHFeedRateTextBox.Size = new System.Drawing.Size(89, 22);
             this.boardHFeedRateTextBox.TabIndex = 14;
             this.boardHFeedRateTextBox.Text = "600";
             this.boardHFeedRateTextBox.TextChanged += new System.EventHandler(this.boardHFeedRateTextBox_TextChanged);
@@ -496,35 +524,37 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(318, 136);
+            this.label4.Location = new System.Drawing.Point(283, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 20);
+            this.label4.Size = new System.Drawing.Size(80, 16);
             this.label4.TabIndex = 13;
             this.label4.Text = "V FeedRate";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(317, 104);
+            this.label5.Location = new System.Drawing.Point(282, 83);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 20);
+            this.label5.Size = new System.Drawing.Size(81, 16);
             this.label5.TabIndex = 12;
             this.label5.Text = "H FeedRate";
             // 
             // boardMillLevelTextBox
             // 
-            this.boardMillLevelTextBox.Location = new System.Drawing.Point(434, 72);
+            this.boardMillLevelTextBox.Location = new System.Drawing.Point(386, 58);
+            this.boardMillLevelTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boardMillLevelTextBox.Name = "boardMillLevelTextBox";
-            this.boardMillLevelTextBox.Size = new System.Drawing.Size(100, 26);
+            this.boardMillLevelTextBox.Size = new System.Drawing.Size(89, 22);
             this.boardMillLevelTextBox.TabIndex = 11;
             this.boardMillLevelTextBox.Text = "-1,6";
             this.boardMillLevelTextBox.TextChanged += new System.EventHandler(this.boardMillLevelTextBox_TextChanged);
             // 
             // boardSpindleSpeedTextBox
             // 
-            this.boardSpindleSpeedTextBox.Location = new System.Drawing.Point(136, 165);
+            this.boardSpindleSpeedTextBox.Location = new System.Drawing.Point(121, 132);
+            this.boardSpindleSpeedTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boardSpindleSpeedTextBox.Name = "boardSpindleSpeedTextBox";
-            this.boardSpindleSpeedTextBox.Size = new System.Drawing.Size(100, 26);
+            this.boardSpindleSpeedTextBox.Size = new System.Drawing.Size(89, 22);
             this.boardSpindleSpeedTextBox.TabIndex = 10;
             this.boardSpindleSpeedTextBox.Text = "16000";
             this.boardSpindleSpeedTextBox.TextChanged += new System.EventHandler(this.boardSpindleSpeedTextBox_TextChanged);
@@ -532,26 +562,27 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 168);
+            this.label3.Location = new System.Drawing.Point(12, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 20);
+            this.label3.Size = new System.Drawing.Size(95, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Spindle speed";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 136);
+            this.label2.Location = new System.Drawing.Point(12, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 20);
+            this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Diameter";
             // 
             // boardDiameterTextBox
             // 
-            this.boardDiameterTextBox.Location = new System.Drawing.Point(136, 133);
+            this.boardDiameterTextBox.Location = new System.Drawing.Point(121, 106);
+            this.boardDiameterTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boardDiameterTextBox.Name = "boardDiameterTextBox";
-            this.boardDiameterTextBox.Size = new System.Drawing.Size(100, 26);
+            this.boardDiameterTextBox.Size = new System.Drawing.Size(89, 22);
             this.boardDiameterTextBox.TabIndex = 7;
             this.boardDiameterTextBox.Text = "2";
             this.boardDiameterTextBox.TextChanged += new System.EventHandler(this.boardDiameterTextBox_TextChanged);
@@ -559,9 +590,10 @@
             // boardDrillsCheckBox
             // 
             this.boardDrillsCheckBox.AutoSize = true;
-            this.boardDrillsCheckBox.Location = new System.Drawing.Point(294, 25);
+            this.boardDrillsCheckBox.Location = new System.Drawing.Point(261, 20);
+            this.boardDrillsCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boardDrillsCheckBox.Name = "boardDrillsCheckBox";
-            this.boardDrillsCheckBox.Size = new System.Drawing.Size(92, 24);
+            this.boardDrillsCheckBox.Size = new System.Drawing.Size(80, 20);
             this.boardDrillsCheckBox.TabIndex = 6;
             this.boardDrillsCheckBox.Text = "Mill drills";
             this.boardDrillsCheckBox.UseVisualStyleBackColor = true;
@@ -570,9 +602,10 @@
             // boardHolesCheckBox
             // 
             this.boardHolesCheckBox.AutoSize = true;
-            this.boardHolesCheckBox.Location = new System.Drawing.Point(150, 25);
+            this.boardHolesCheckBox.Location = new System.Drawing.Point(133, 20);
+            this.boardHolesCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boardHolesCheckBox.Name = "boardHolesCheckBox";
-            this.boardHolesCheckBox.Size = new System.Drawing.Size(99, 24);
+            this.boardHolesCheckBox.Size = new System.Drawing.Size(85, 20);
             this.boardHolesCheckBox.TabIndex = 5;
             this.boardHolesCheckBox.Text = "Mill holes";
             this.boardHolesCheckBox.UseVisualStyleBackColor = true;
@@ -581,9 +614,10 @@
             // boardBorderCheckBox
             // 
             this.boardBorderCheckBox.AutoSize = true;
-            this.boardBorderCheckBox.Location = new System.Drawing.Point(6, 25);
+            this.boardBorderCheckBox.Location = new System.Drawing.Point(5, 20);
+            this.boardBorderCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.boardBorderCheckBox.Name = "boardBorderCheckBox";
-            this.boardBorderCheckBox.Size = new System.Drawing.Size(107, 24);
+            this.boardBorderCheckBox.Size = new System.Drawing.Size(92, 20);
             this.boardBorderCheckBox.TabIndex = 4;
             this.boardBorderCheckBox.Text = "Mill border";
             this.boardBorderCheckBox.UseVisualStyleBackColor = true;
@@ -597,18 +631,21 @@
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.Controls.Add(this.dataGridView1);
-            this.groupBox4.Location = new System.Drawing.Point(12, 823);
+            this.groupBox4.Location = new System.Drawing.Point(11, 658);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(640, 280);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Size = new System.Drawing.Size(569, 224);
             this.groupBox4.TabIndex = 29;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Drilling";
             // 
             // drillDrillLevelTextBox
             // 
-            this.drillDrillLevelTextBox.Location = new System.Drawing.Point(98, 78);
+            this.drillDrillLevelTextBox.Location = new System.Drawing.Point(87, 62);
+            this.drillDrillLevelTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drillDrillLevelTextBox.Name = "drillDrillLevelTextBox";
-            this.drillDrillLevelTextBox.Size = new System.Drawing.Size(100, 26);
+            this.drillDrillLevelTextBox.Size = new System.Drawing.Size(89, 22);
             this.drillDrillLevelTextBox.TabIndex = 32;
             this.drillDrillLevelTextBox.Text = "-1,6";
             this.drillDrillLevelTextBox.TextChanged += new System.EventHandler(this.drillDrillLevelTextBox_TextChanged);
@@ -616,18 +653,19 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(14, 81);
+            this.label13.Location = new System.Drawing.Point(12, 65);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 20);
+            this.label13.Size = new System.Drawing.Size(62, 16);
             this.label13.TabIndex = 9;
             this.label13.Text = "Drill level";
             // 
             // drillGenerateCheckBox
             // 
             this.drillGenerateCheckBox.AutoSize = true;
-            this.drillGenerateCheckBox.Location = new System.Drawing.Point(12, 40);
+            this.drillGenerateCheckBox.Location = new System.Drawing.Point(11, 32);
+            this.drillGenerateCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drillGenerateCheckBox.Name = "drillGenerateCheckBox";
-            this.drillGenerateCheckBox.Size = new System.Drawing.Size(138, 24);
+            this.drillGenerateCheckBox.Size = new System.Drawing.Size(116, 20);
             this.drillGenerateCheckBox.TabIndex = 3;
             this.drillGenerateCheckBox.Text = "Generate drills";
             this.drillGenerateCheckBox.UseVisualStyleBackColor = true;
@@ -635,9 +673,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(493, 71);
+            this.button4.Location = new System.Drawing.Point(438, 57);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 41);
+            this.button4.Size = new System.Drawing.Size(113, 33);
             this.button4.TabIndex = 2;
             this.button4.Text = "Delete drill";
             this.button4.UseVisualStyleBackColor = true;
@@ -645,9 +684,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(493, 23);
+            this.button3.Location = new System.Drawing.Point(438, 18);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 41);
+            this.button3.Size = new System.Drawing.Size(113, 33);
             this.button3.TabIndex = 1;
             this.button3.Text = "Add drill";
             this.button3.UseVisualStyleBackColor = true;
@@ -664,14 +704,15 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 118);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 94);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(628, 156);
+            this.dataGridView1.Size = new System.Drawing.Size(558, 125);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -712,9 +753,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(353, 12);
+            this.button5.Location = new System.Drawing.Point(314, 10);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(121, 46);
+            this.button5.Size = new System.Drawing.Size(108, 37);
             this.button5.TabIndex = 30;
             this.button5.Text = "Open Profile";
             this.button5.UseVisualStyleBackColor = true;
@@ -722,9 +764,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(480, 12);
+            this.button6.Location = new System.Drawing.Point(427, 10);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(114, 46);
+            this.button6.Size = new System.Drawing.Size(101, 37);
             this.button6.TabIndex = 31;
             this.button6.Text = "Save Profile";
             this.button6.UseVisualStyleBackColor = true;
@@ -742,17 +785,19 @@
             "40",
             "50",
             "100"});
-            this.comboBox2.Location = new System.Drawing.Point(503, 72);
+            this.comboBox2.Location = new System.Drawing.Point(447, 58);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(129, 28);
+            this.comboBox2.Size = new System.Drawing.Size(115, 24);
             this.comboBox2.TabIndex = 32;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(216, 12);
+            this.button8.Location = new System.Drawing.Point(192, 10);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(114, 46);
+            this.button8.Size = new System.Drawing.Size(101, 37);
             this.button8.TabIndex = 34;
             this.button8.Text = "Reload file";
             this.button8.UseVisualStyleBackColor = true;
@@ -764,26 +809,28 @@
             this.comboBox3.Items.AddRange(new object[] {
             "TOP",
             "BOTTOM"});
-            this.comboBox3.Location = new System.Drawing.Point(503, 106);
+            this.comboBox3.Location = new System.Drawing.Point(447, 85);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(129, 28);
+            this.comboBox3.Size = new System.Drawing.Size(115, 24);
             this.comboBox3.TabIndex = 36;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(428, 109);
+            this.label18.Location = new System.Drawing.Point(380, 87);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(48, 20);
+            this.label18.Size = new System.Drawing.Size(41, 16);
             this.label18.TabIndex = 35;
             this.label18.Text = "Layer";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(336, 74);
+            this.button7.Location = new System.Drawing.Point(299, 59);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(67, 18);
             this.button7.TabIndex = 37;
             this.button7.Text = "field1";
             this.button7.UseVisualStyleBackColor = true;
@@ -792,9 +839,10 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(333, 103);
+            this.button9.Location = new System.Drawing.Point(296, 82);
+            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.Size = new System.Drawing.Size(67, 18);
             this.button9.TabIndex = 38;
             this.button9.Text = "field1";
             this.button9.UseVisualStyleBackColor = true;
@@ -817,28 +865,45 @@
             this.groupBox5.Controls.Add(this.fieldHFeedRateTextBox);
             this.groupBox5.Controls.Add(this.label25);
             this.groupBox5.Controls.Add(this.fieldSpindleSpeedTextBox);
-            this.groupBox5.Location = new System.Drawing.Point(12, 431);
+            this.groupBox5.Location = new System.Drawing.Point(11, 345);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(640, 168);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox5.Size = new System.Drawing.Size(569, 134);
             this.groupBox5.TabIndex = 39;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Fields milling";
             // 
+            // fieldUseTracesToolcheckBox
+            // 
+            this.fieldUseTracesToolcheckBox.AutoSize = true;
+            this.fieldUseTracesToolcheckBox.Checked = true;
+            this.fieldUseTracesToolcheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.fieldUseTracesToolcheckBox.Location = new System.Drawing.Point(121, 20);
+            this.fieldUseTracesToolcheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fieldUseTracesToolcheckBox.Name = "fieldUseTracesToolcheckBox";
+            this.fieldUseTracesToolcheckBox.Size = new System.Drawing.Size(160, 20);
+            this.fieldUseTracesToolcheckBox.TabIndex = 39;
+            this.fieldUseTracesToolcheckBox.Text = "Use traces milling tool";
+            this.fieldUseTracesToolcheckBox.UseVisualStyleBackColor = true;
+            this.fieldUseTracesToolcheckBox.CheckedChanged += new System.EventHandler(this.fieldUseTracesToolcheckBox_CheckedChanged);
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(14, 68);
+            this.label20.Location = new System.Drawing.Point(12, 54);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(97, 20);
+            this.label20.Size = new System.Drawing.Size(83, 16);
             this.label20.TabIndex = 38;
             this.label20.Text = "Tool number";
             // 
             // fieldToolNumberTextBox
             // 
-            this.fieldToolNumberTextBox.Location = new System.Drawing.Point(136, 65);
+            this.fieldToolNumberTextBox.Location = new System.Drawing.Point(121, 52);
+            this.fieldToolNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fieldToolNumberTextBox.Name = "fieldToolNumberTextBox";
             this.fieldToolNumberTextBox.ReadOnly = true;
-            this.fieldToolNumberTextBox.Size = new System.Drawing.Size(100, 26);
+            this.fieldToolNumberTextBox.Size = new System.Drawing.Size(89, 22);
             this.fieldToolNumberTextBox.TabIndex = 35;
             this.fieldToolNumberTextBox.Text = "3";
             this.fieldToolNumberTextBox.TextChanged += new System.EventHandler(this.fieldToolNumberTextBox_TextChanged);
@@ -846,18 +911,19 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(320, 68);
+            this.label21.Location = new System.Drawing.Point(284, 54);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(66, 20);
+            this.label21.Size = new System.Drawing.Size(59, 16);
             this.label21.TabIndex = 34;
             this.label21.Text = "Mill level";
             // 
             // fieldMillLevelTextBox
             // 
-            this.fieldMillLevelTextBox.Location = new System.Drawing.Point(440, 65);
+            this.fieldMillLevelTextBox.Location = new System.Drawing.Point(391, 52);
+            this.fieldMillLevelTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fieldMillLevelTextBox.Name = "fieldMillLevelTextBox";
             this.fieldMillLevelTextBox.ReadOnly = true;
-            this.fieldMillLevelTextBox.Size = new System.Drawing.Size(100, 26);
+            this.fieldMillLevelTextBox.Size = new System.Drawing.Size(89, 22);
             this.fieldMillLevelTextBox.TabIndex = 34;
             this.fieldMillLevelTextBox.Text = "-0,05";
             this.fieldMillLevelTextBox.TextChanged += new System.EventHandler(this.fieldMillLevelTextBox_TextChanged);
@@ -865,9 +931,10 @@
             // millFieldsCheckBox
             // 
             this.millFieldsCheckBox.AutoSize = true;
-            this.millFieldsCheckBox.Location = new System.Drawing.Point(6, 25);
+            this.millFieldsCheckBox.Location = new System.Drawing.Point(5, 20);
+            this.millFieldsCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.millFieldsCheckBox.Name = "millFieldsCheckBox";
-            this.millFieldsCheckBox.Size = new System.Drawing.Size(98, 24);
+            this.millFieldsCheckBox.Size = new System.Drawing.Size(84, 20);
             this.millFieldsCheckBox.TabIndex = 17;
             this.millFieldsCheckBox.Text = "Mill fields";
             this.millFieldsCheckBox.UseVisualStyleBackColor = true;
@@ -875,10 +942,11 @@
             // 
             // fieldVFeedRateTextBox
             // 
-            this.fieldVFeedRateTextBox.Location = new System.Drawing.Point(440, 126);
+            this.fieldVFeedRateTextBox.Location = new System.Drawing.Point(391, 101);
+            this.fieldVFeedRateTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fieldVFeedRateTextBox.Name = "fieldVFeedRateTextBox";
             this.fieldVFeedRateTextBox.ReadOnly = true;
-            this.fieldVFeedRateTextBox.Size = new System.Drawing.Size(100, 26);
+            this.fieldVFeedRateTextBox.Size = new System.Drawing.Size(89, 22);
             this.fieldVFeedRateTextBox.TabIndex = 27;
             this.fieldVFeedRateTextBox.Text = "800";
             this.fieldVFeedRateTextBox.TextChanged += new System.EventHandler(this.fieldVFeedRateTextBox_TextChanged);
@@ -886,18 +954,19 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(318, 129);
+            this.label22.Location = new System.Drawing.Point(283, 103);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(96, 20);
+            this.label22.Size = new System.Drawing.Size(80, 16);
             this.label22.TabIndex = 26;
             this.label22.Text = "V FeedRate";
             // 
             // fieldDiameterTextBox
             // 
-            this.fieldDiameterTextBox.Location = new System.Drawing.Point(136, 97);
+            this.fieldDiameterTextBox.Location = new System.Drawing.Point(121, 78);
+            this.fieldDiameterTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fieldDiameterTextBox.Name = "fieldDiameterTextBox";
             this.fieldDiameterTextBox.ReadOnly = true;
-            this.fieldDiameterTextBox.Size = new System.Drawing.Size(100, 26);
+            this.fieldDiameterTextBox.Size = new System.Drawing.Size(89, 22);
             this.fieldDiameterTextBox.TabIndex = 20;
             this.fieldDiameterTextBox.Text = "0,2";
             this.fieldDiameterTextBox.TextChanged += new System.EventHandler(this.fieldDiameterTextBox_TextChanged);
@@ -905,27 +974,28 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(318, 100);
+            this.label23.Location = new System.Drawing.Point(283, 80);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(97, 20);
+            this.label23.Size = new System.Drawing.Size(81, 16);
             this.label23.TabIndex = 25;
             this.label23.Text = "H FeedRate";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(14, 100);
+            this.label24.Location = new System.Drawing.Point(12, 80);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(74, 20);
+            this.label24.Size = new System.Drawing.Size(62, 16);
             this.label24.TabIndex = 21;
             this.label24.Text = "Diameter";
             // 
             // fieldHFeedRateTextBox
             // 
-            this.fieldHFeedRateTextBox.Location = new System.Drawing.Point(440, 97);
+            this.fieldHFeedRateTextBox.Location = new System.Drawing.Point(391, 78);
+            this.fieldHFeedRateTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fieldHFeedRateTextBox.Name = "fieldHFeedRateTextBox";
             this.fieldHFeedRateTextBox.ReadOnly = true;
-            this.fieldHFeedRateTextBox.Size = new System.Drawing.Size(100, 26);
+            this.fieldHFeedRateTextBox.Size = new System.Drawing.Size(89, 22);
             this.fieldHFeedRateTextBox.TabIndex = 24;
             this.fieldHFeedRateTextBox.Text = "800";
             this.fieldHFeedRateTextBox.TextChanged += new System.EventHandler(this.fieldHFeedRateTextBox_TextChanged);
@@ -933,40 +1003,41 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(14, 132);
+            this.label25.Location = new System.Drawing.Point(12, 106);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(110, 20);
+            this.label25.Size = new System.Drawing.Size(95, 16);
             this.label25.TabIndex = 22;
             this.label25.Text = "Spindle speed";
             // 
             // fieldSpindleSpeedTextBox
             // 
-            this.fieldSpindleSpeedTextBox.Location = new System.Drawing.Point(136, 126);
+            this.fieldSpindleSpeedTextBox.Location = new System.Drawing.Point(121, 101);
+            this.fieldSpindleSpeedTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fieldSpindleSpeedTextBox.Name = "fieldSpindleSpeedTextBox";
             this.fieldSpindleSpeedTextBox.ReadOnly = true;
-            this.fieldSpindleSpeedTextBox.Size = new System.Drawing.Size(100, 26);
+            this.fieldSpindleSpeedTextBox.Size = new System.Drawing.Size(89, 22);
             this.fieldSpindleSpeedTextBox.TabIndex = 23;
             this.fieldSpindleSpeedTextBox.Text = "18000";
             this.fieldSpindleSpeedTextBox.TextChanged += new System.EventHandler(this.fieldSpindleSpeedTextBox_TextChanged);
             // 
-            // fieldUseTracesToolcheckBox
+            // checkBoxComments
             // 
-            this.fieldUseTracesToolcheckBox.AutoSize = true;
-            this.fieldUseTracesToolcheckBox.Checked = true;
-            this.fieldUseTracesToolcheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.fieldUseTracesToolcheckBox.Location = new System.Drawing.Point(136, 25);
-            this.fieldUseTracesToolcheckBox.Name = "fieldUseTracesToolcheckBox";
-            this.fieldUseTracesToolcheckBox.Size = new System.Drawing.Size(189, 24);
-            this.fieldUseTracesToolcheckBox.TabIndex = 39;
-            this.fieldUseTracesToolcheckBox.Text = "Use traces milling tool";
-            this.fieldUseTracesToolcheckBox.UseVisualStyleBackColor = true;
-            this.fieldUseTracesToolcheckBox.CheckedChanged += new System.EventHandler(this.fieldUseTracesToolcheckBox_CheckedChanged);
+            this.checkBoxComments.AutoSize = true;
+            this.checkBoxComments.Checked = true;
+            this.checkBoxComments.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxComments.Location = new System.Drawing.Point(285, 67);
+            this.checkBoxComments.Name = "checkBoxComments";
+            this.checkBoxComments.Size = new System.Drawing.Size(126, 20);
+            this.checkBoxComments.TabIndex = 34;
+            this.checkBoxComments.Text = "Insert comments";
+            this.checkBoxComments.UseVisualStyleBackColor = true;
+            this.checkBoxComments.CheckedChanged += new System.EventHandler(this.checkBoxComments_CheckedChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2781, 1345);
+            this.ClientSize = new System.Drawing.Size(1710, 844);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button7);
@@ -986,6 +1057,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "KiCAD2Gcode";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1088,6 +1160,7 @@
         private System.Windows.Forms.TextBox fieldHFeedRateTextBox;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox fieldSpindleSpeedTextBox;
+        private System.Windows.Forms.CheckBox checkBoxComments;
     }
 }
 

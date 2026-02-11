@@ -65,6 +65,10 @@ namespace KiCad2Gcode
         public bool fieldActive = false;
         public bool fieldUseTraceMill = true;
 
+        /* G-code */
+        public bool insertComments = true;
+        public string startGCode = string.Empty;
+        public string endGCode = string.Empty;
 
 
         internal void AddDrill(DrillData drill)
@@ -410,6 +414,27 @@ namespace KiCad2Gcode
                 }
                 catch { ok = false; }
 
+                try
+                {
+                    node = config.SelectSingleNode("ROOT/G-code/insert_comments");
+                    insertComments = node.InnerText == "true";
+                }
+                catch { ok = false; }
+
+                try
+                {
+                    node = config.SelectSingleNode("ROOT/G-code/startGCode");
+                    startGCode = node.InnerText;
+                }
+                catch { ok = false; }
+
+                try
+                {
+                    node = config.SelectSingleNode("ROOT/G-code/endGCode");
+                    endGCode = node.InnerText;
+                }
+                catch { ok = false; }
+
             }
 
             if(ok)
@@ -429,7 +454,8 @@ namespace KiCad2Gcode
             generalConfig.AppendChild(config.CreateElement("safeLevel")).InnerText = safeLevel.ToString();
             generalConfig.AppendChild(config.CreateElement("clearLevel")).InnerText = clearLevel.ToString();
             generalConfig.AppendChild(config.CreateElement("m3Dwel")).InnerText = m3dwel.ToString();
-
+            generalConfig.AppendChild(config.CreateElement("insert_comments")).InnerText = insertComments ? "true" : "false";
+            
             XmlElement traceConfig = (XmlElement)rootElement.AppendChild(config.CreateElement("TRACE"));
 
             traceConfig.AppendChild(config.CreateElement("active")).InnerText = traceActive.ToString();

@@ -852,6 +852,9 @@ namespace KiCad2Gcode
             testForm.ShowDialog();
         }
 
-        
+        private void checkBoxComments_CheckedChanged(object sender, EventArgs e)
+        {
+            config.insertComments = checkBoxComments.Checked;
+        }
     }
 }
