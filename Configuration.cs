@@ -416,21 +416,21 @@ namespace KiCad2Gcode
 
                 try
                 {
-                    node = config.SelectSingleNode("ROOT/G-code/insert_comments");
+                    node = config.SelectSingleNode("ROOT/Gcode/insert_comments");
                     insertComments = node.InnerText == "true";
                 }
                 catch { ok = false; }
 
                 try
                 {
-                    node = config.SelectSingleNode("ROOT/G-code/startGCode");
+                    node = config.SelectSingleNode("ROOT/Gcode/startGCode");
                     startGCode = node.InnerText;
                 }
                 catch { ok = false; }
 
                 try
                 {
-                    node = config.SelectSingleNode("ROOT/G-code/endGCode");
+                    node = config.SelectSingleNode("ROOT/Gcode/endGCode");
                     endGCode = node.InnerText;
                 }
                 catch { ok = false; }
@@ -454,7 +454,6 @@ namespace KiCad2Gcode
             generalConfig.AppendChild(config.CreateElement("safeLevel")).InnerText = safeLevel.ToString();
             generalConfig.AppendChild(config.CreateElement("clearLevel")).InnerText = clearLevel.ToString();
             generalConfig.AppendChild(config.CreateElement("m3Dwel")).InnerText = m3dwel.ToString();
-            generalConfig.AppendChild(config.CreateElement("insert_comments")).InnerText = insertComments ? "true" : "false";
             
             XmlElement traceConfig = (XmlElement)rootElement.AppendChild(config.CreateElement("TRACE"));
 
@@ -506,6 +505,11 @@ namespace KiCad2Gcode
             fieldConfig.AppendChild(config.CreateElement("HFeedRate")).InnerText = fieldMillHFeedRate.ToString();
             fieldConfig.AppendChild(config.CreateElement("VFeedRate")).InnerText = fieldMillVFeedRate.ToString();
             fieldConfig.AppendChild(config.CreateElement("SpindleSpeed")).InnerText = fieldMillSpindleSpeed.ToString();
+
+            XmlElement gcodeConfig = (XmlElement)rootElement.AppendChild(config.CreateElement("Gcode"));
+            gcodeConfig.AppendChild(config.CreateElement("insert_comments")).InnerText = insertComments ? "true" : "false";
+            gcodeConfig.AppendChild(config.CreateElement("startGCode")).InnerText = startGCode;
+            gcodeConfig.AppendChild(config.CreateElement("endGCode")).InnerText = endGCode;
 
             config.Save(fileName);
         }
