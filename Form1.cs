@@ -220,8 +220,10 @@ namespace KiCad2Gcode
 
         }
 
+        bool loadingConfig = false;
         private void Config2Gui()
         {
+            loadingConfig = true;
             /* general */
 
             clearLevelTextBox.Text = config.clearLevel.ToString();
@@ -265,6 +267,13 @@ namespace KiCad2Gcode
             drillDrillLevelTextBox.Text = config.drillLevel.ToString();
             drillGenerateCheckBox.Checked = config.drillAcive;
             RedrawDrillList();
+
+            /* g-code */
+            checkBoxComments.Checked = config.insertComments;
+            textBoxStartGCode.Text = config.startGCode;
+            textBoxEndGCode.Text = config.endGCode;
+
+            loadingConfig = false;
         }
 
 
@@ -854,7 +863,20 @@ namespace KiCad2Gcode
 
         private void checkBoxComments_CheckedChanged(object sender, EventArgs e)
         {
+            if (loadingConfig) return;
             config.insertComments = checkBoxComments.Checked;
+        }
+
+        private void textBoxStartGCode_TextChanged(object sender, EventArgs e)
+        {
+            if (loadingConfig) return;
+            config.startGCode = textBoxStartGCode.Text;
+        }
+
+        private void textBoxEndGCode_TextChanged(object sender, EventArgs e)
+        {
+            if (loadingConfig) return;
+            config.endGCode = textBoxEndGCode.Text;
         }
     }
 }
