@@ -90,7 +90,7 @@ namespace KiCad2Gcode
 
                     //string commentStr = " ( cX" + n.arc.centre.x.ToString(F,I) + " cY" + n.arc.centre.y.ToString(F,I) + " )";
 
-                    file.WriteLine(instruction + epStr + " Z" + z.ToString(F, I) + " I" + (cx - offset.XOffset).ToString(F, I) + " J" + (cy - offset.YOffset).ToString(F, I) + " F" + feedRate.ToString(F, I));// commentStr);
+                    file.WriteLine(instruction + epStr + " Z" + z.ToString(F, I) + " I" + cx.ToString(F, I) + " J" + cy.ToString(F, I) + " F" + feedRate.ToString(F, I));// commentStr);
                 }
                 startPt = n.pt;
                 nll = nll.Next;
