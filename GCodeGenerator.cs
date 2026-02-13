@@ -42,17 +42,17 @@ namespace KiCad2Gcode
             file.WriteLine("M5");
         }
 
-        private void GeneratePath(StreamWriter file, Polygon polygon, double feedRate, double z)
+        private void GeneratePath(StreamWriter file, Polygon polygon, double feedRate, double z, MiddlePoint offset)
         {
             Point2D startPt = polygon.points.Last.Value.pt;
 
             LinkedListNode<Node> nll = polygon.points.First;
-            while(nll != null)
+            while (nll != null)
             {
                 Node n = nll.Value;
-                if(n.arc == null)
+                if (n.arc == null)
                 {
-                    file.WriteLine("G1 X" + n.pt.x.ToString(F,I ) + " Y" + n.pt.y.ToString(F,I) + " Z" + z.ToString(F, I) + " F" + feedRate.ToString(F,I));
+                    file.WriteLine("G1 X" + (n.pt.x - offset.XOffset).ToString(F, I) + " Y" + (n.pt.y - offset.YOffset).ToString(F, I) + " Z" + z.ToString(F, I) + " F" + feedRate.ToString(F, I));
                 }
                 else
                 {
@@ -83,14 +83,14 @@ namespace KiCad2Gcode
 
                     string epStr = "";
 
-                    if(n.pt.IsSameAs(startPt) == false)
+                    if (n.pt.IsSameAs(startPt) == false)
                     {
-                        epStr = " X" + n.pt.x.ToString(F,I) + " Y" + n.pt.y.ToString(F,I);
+                        epStr = " X" + (n.pt.x - offset.XOffset).ToString(F, I) + " Y" + (n.pt.y - offset.YOffset).ToString(F, I);
                     }
 
                     //string commentStr = " ( cX" + n.arc.centre.x.ToString(F,I) + " cY" + n.arc.centre.y.ToString(F,I) + " )";
 
-                    file.WriteLine(instruction + epStr + " Z" + z.ToString(F, I) + " I" + cx.ToString(F, I) + " J" + cy.ToString(F, I) + " F" + feedRate.ToString(F, I));// commentStr);
+                    file.WriteLine(instruction + epStr + " Z" + z.ToString(F, I) + " I" + (cx - offset.XOffset).ToString(F, I) + " J" + (cy - offset.YOffset).ToString(F, I) + " F" + feedRate.ToString(F, I));// commentStr);
                 }
                 startPt = n.pt;
                 nll = nll.Next;
@@ -149,6 +149,25 @@ namespace KiCad2Gcode
 
         public void Generate(string fileName, List<DrillList> drills, List<Polygon> traces, List<Polygon> fields, List<Polygon> cuts, Polygon outerCut, string versionName)
         {
+            /* calculate offset */
+
+            MiddlePoint offset = new MiddlePoint();
+
+            if (config.zeroCenterOfBoard)
+            {
+                if (traces != null && config.traceActive)
+                {
+                    foreach (Polygon p in traces)
+                        foreach (Node n in p.points)
+                            offset.add(n.pt.x, n.pt.y);
+                }
+                if (fields != null && config.fieldActive)
+                {
+
+                }
+
+            }
+
             /*create file */
             StreamWriter file = File.CreateText(fileName);
             if(file == null)
@@ -195,16 +214,16 @@ namespace KiCad2Gcode
                         startPoint = polygon.points.First.Value.pt;
                         polygon.selected = 1;
 
-                        double x = polygon.points.Last.Value.pt.x;
-                        double y = polygon.points.Last.Value.pt.y;
+                        double x = polygon.points.Last.Value.pt.x - offset.XOffset;
+                        double y = polygon.points.Last.Value.pt.y - offset.YOffset;
 
 
                         /* add selected to mill */
                         file.WriteLine("G0 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.clearLevel.ToString(F, I));
-                        file.WriteLine("G0 Z" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.safeLevel.ToString(F, I));
-                        file.WriteLine("G1 Z" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.traceMillLevel.ToString(F, I) + " F" + config.traceMillVFeedRate.ToString(F, I));
+                        file.WriteLine("G0 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.safeLevel.ToString(F, I));
+                        file.WriteLine("G1 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.traceMillLevel.ToString(F, I) + " F" + config.traceMillVFeedRate.ToString(F, I));
 
-                        GeneratePath(file, polygon, config.traceMillHFeedRate, config.traceMillLevel);
+                        GeneratePath(file, polygon, config.traceMillHFeedRate, config.traceMillLevel, offset);
 
                         file.WriteLine("G0 Z" + config.clearLevel.ToString(F, I));
 
@@ -271,15 +290,15 @@ namespace KiCad2Gcode
                         double hFeedRate = config.fieldUseTraceMill ? config.traceMillHFeedRate : config.fieldMillHFeedRate;
                         double millLevel = config.fieldUseTraceMill ? config.traceMillLevel : config.fieldMillLevel;
 
-                        double x = polygon.points.Last.Value.pt.x;
-                        double y = polygon.points.Last.Value.pt.y;
+                        double x = polygon.points.Last.Value.pt.x - offset.XOffset;
+                        double y = polygon.points.Last.Value.pt.y - offset.YOffset;
 
                         /* add selected to mill */
                         file.WriteLine("G0 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.clearLevel.ToString(F, I));
-                        file.WriteLine("G0 Z" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.safeLevel.ToString(F, I));
-                        file.WriteLine("G1 Z" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" +  millLevel.ToString(F, I) + " F" + vFeedRate.ToString(F, I));
+                        file.WriteLine("G0 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.safeLevel.ToString(F, I));
+                        file.WriteLine("G1 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" +  millLevel.ToString(F, I) + " F" + vFeedRate.ToString(F, I));
 
-                        GeneratePath(file, polygon, hFeedRate, millLevel );
+                        GeneratePath(file, polygon, hFeedRate, millLevel, offset);
 
                         file.WriteLine("G0 Z" + config.clearLevel.ToString(F, I));
 
@@ -323,9 +342,9 @@ namespace KiCad2Gcode
                         }
                         else
                         {
-                            file.WriteLine("G0 X" + p.x.ToString(F, I) + " Y" + p.y.ToString(F, I) + " Z" + config.clearLevel.ToString(F, I));
-                            file.WriteLine("G0 X" + p.x.ToString(F, I) + " Y" + p.y.ToString(F, I) + " Z" + config.safeLevel.ToString(F, I));
-                            file.WriteLine("G81 X" + p.x.ToString(F, I) + " Y" + p.y.ToString(F, I) + " Z" + config.drillLevel.ToString(F, I) + " R" + config.safeLevel.ToString(F, I) + " F" + drill.drillData.feedRate.ToString(F, I));
+                            file.WriteLine("G0 X" + (p.x-offset.XOffset).ToString(F, I) + " Y" + (p.y-offset.YOffset).ToString(F, I) + " Z" + config.clearLevel.ToString(F, I));
+                            file.WriteLine("G0 X" + (p.x - offset.XOffset).ToString(F, I) + " Y" + (p.y - offset.YOffset).ToString(F, I) + " Z" + config.safeLevel.ToString(F, I));
+                            file.WriteLine("G81 X" + (p.x - offset.XOffset).ToString(F, I) + " Y" + (p.y - offset.YOffset).ToString(F, I) + " Z" + config.drillLevel.ToString(F, I) + " R" + config.safeLevel.ToString(F, I) + " F" + drill.drillData.feedRate.ToString(F, I));
                             p.state = Point2D.STATE_et.USED;
                         }
 
@@ -358,14 +377,14 @@ namespace KiCad2Gcode
                     }
                     foreach (Polygon polygon in cuts)
                     {
-                        double x = polygon.points.Last.Value.pt.x;
-                        double y = polygon.points.Last.Value.pt.y;
+                        double x = polygon.points.Last.Value.pt.x - offset.XOffset;
+                        double y = polygon.points.Last.Value.pt.y - offset.YOffset;
 
                         file.WriteLine("G0 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.clearLevel.ToString(F, I));
                         file.WriteLine("G0 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.safeLevel.ToString(F, I));
                         file.WriteLine("G1 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + actLevel.ToString(F, I) + " F" + config.boardMillVFeedRate.ToString(F, I));
 
-                        GeneratePath(file, polygon, config.boardMillHFeedRate, actLevel);
+                        GeneratePath(file, polygon, config.boardMillHFeedRate, actLevel, offset);
 
                         file.WriteLine("G0 Z" + config.clearLevel.ToString(F, I));
                     }
@@ -410,14 +429,14 @@ namespace KiCad2Gcode
                         actLevel = config.boardMillLevel;
                     }
 
-                    double x = polygon.points.Last.Value.pt.x;
-                    double y = polygon.points.Last.Value.pt.y;
+                    double x = polygon.points.Last.Value.pt.x - offset.XOffset;
+                    double y = polygon.points.Last.Value.pt.y - offset.YOffset;
 
                     file.WriteLine("G0 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.clearLevel.ToString(F, I));
                     file.WriteLine("G0 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + config.safeLevel.ToString(F, I));
                     file.WriteLine("G1 X" + x.ToString(F, I) + " Y" + y.ToString(F, I) + " Z" + actLevel.ToString(F, I) + " F" + config.boardMillVFeedRate.ToString(F, I));
 
-                    GeneratePath(file, polygon, config.boardMillHFeedRate, actLevel);
+                    GeneratePath(file, polygon, config.boardMillHFeedRate, actLevel, offset);
 
                     file.WriteLine("G0 Z" + config.clearLevel.ToString(F,I));
                 } while (actLevel > config.boardMillLevel);

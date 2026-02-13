@@ -272,7 +272,7 @@ namespace KiCad2Gcode
             checkBoxComments.Checked = config.insertComments;
             textBoxStartGCode.Text = config.startGCode;
             textBoxEndGCode.Text = config.endGCode;
-
+            checkBoxZeroOffset.Checked = config.zeroCenterOfBoard;
             loadingConfig = false;
         }
 
@@ -877,6 +877,12 @@ namespace KiCad2Gcode
         {
             if (loadingConfig) return;
             config.endGCode = textBoxEndGCode.Text;
+        }
+
+        private void checkBoxZeroOffset_CheckedChanged(object sender, EventArgs e)
+        {
+            if (loadingConfig) return;
+            config.zeroCenterOfBoard = checkBoxZeroOffset.Checked;
         }
     }
 }

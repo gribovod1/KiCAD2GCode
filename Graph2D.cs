@@ -1,18 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using static KiCad2Gcode.CrossUnit;
 
 namespace KiCad2Gcode
 {
+    public class MiddlePoint
+    {
+        public double x = 0;
+        public double y = 0;
+        public int count;
+        public MiddlePoint() { }
+        public void add(double x, double y)
+        {
+            this.x += x;
+            this.y += y;
+            ++count;
+        }
+        public double XOffset { get { return this.x / count; } }
+
+        public double YOffset { get { return this.y / count; } }
+    }
 
     public class Point2D
     {

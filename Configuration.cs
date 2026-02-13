@@ -69,6 +69,7 @@ namespace KiCad2Gcode
         public bool insertComments = true;
         public string startGCode = string.Empty;
         public string endGCode = string.Empty;
+        public bool zeroCenterOfBoard = false;
 
 
         internal void AddDrill(DrillData drill)
@@ -435,6 +436,13 @@ namespace KiCad2Gcode
                 }
                 catch { ok = false; }
 
+                try
+                {
+                    node = config.SelectSingleNode("ROOT/Gcode/zeroCenterOfBoard");
+                    zeroCenterOfBoard = node.InnerText == "true";
+                }
+                catch { ok = false; }
+                
             }
 
             if(ok)
@@ -510,7 +518,8 @@ namespace KiCad2Gcode
             gcodeConfig.AppendChild(config.CreateElement("insert_comments")).InnerText = insertComments ? "true" : "false";
             gcodeConfig.AppendChild(config.CreateElement("startGCode")).InnerText = startGCode;
             gcodeConfig.AppendChild(config.CreateElement("endGCode")).InnerText = endGCode;
-
+            gcodeConfig.AppendChild(config.CreateElement("zeroCenterOfBoard")).InnerText = zeroCenterOfBoard ? "true" : "false";
+            
             config.Save(fileName);
         }
 
